@@ -1,0 +1,48 @@
+<h1>Patron Name :@Model["patron"].GetPatron()</h1>
+
+<h2>CheckOut Books</h2>
+
+<table>
+  <tr>
+    <th>Number of copies</th>
+    <th>Books</th>
+    <th>Checkout Date</th>
+
+  </tr>
+    @foreach (var book in @Model["books"])
+    {
+    <tr>
+      <th>@book.Getcopies()</th>
+      <th>@book.GetTitlename()</th>
+      <th>
+      @if(@book.Getcopies() > 0)
+      {
+        <form action='/Patrons/@Model["patron"].GetId()/@book.GetId()/Checkout' method='post'>
+        <label for='inputBook'>Checkout Date</label>
+          <input id='date' name='date' type='date'>
+          <button type='submit'>Checkout</button>
+        </form>
+      }
+      </th>
+    </tr>
+    }
+</table>
+
+
+
+@* @if(@Model["books"].Count == 0)
+{
+  <p>No Books Added!</p>
+}
+else
+{
+  @foreach (var book in @Model["books"])
+  {
+    <li>@book.GetTitlename()<br>
+    <p>Copies : @book.Getcopies()</li>
+  }
+} *@
+
+
+<a href="/Authors">View All Authors</a> <br>
+<a href="/">Home</a>

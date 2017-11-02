@@ -1,0 +1,26 @@
+<h1>All Inventory</h1>
+
+
+<a href="/Authors">View All Authors</a><br>
+
+<a href="/BookList">View All Books</a><br>
+
+<a href="/Patrons">View all Patrons</a><br>
+
+
+<form action='/authors' method="post">
+  <label for="inputAuthor">Enter your Author:</label>
+  <input name="inputAuthor" class="form-control" id="inputAuthor"required>
+  <button type="submit" class="btn btn-danger">Add an Author</button>
+</form>
+
+<form action='/Patrons' method='post'>
+  <label for='patron'>Enter A Patron</label>
+  <input name='patron' required>
+  <button type='submit'>Add a Patron</button>
+</form>
+
+
+<form action="/Book/Delete" method="post">
+  <button type="submit" class="btn btn-danger">Delete All Books</button>
+</form>

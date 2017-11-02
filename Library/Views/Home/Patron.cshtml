@@ -1,0 +1,14 @@
+<h1>Name: </h1>
+<h2>List of Patrons:</h2>
+@foreach (var patron in Model)
+{
+  <p><a href = "/patron/@patron.GetId()">@patron.GetPatron()</a></p>;
+}
+
+<form action='/Patrons' method='post'>
+  <label for='inputPatron'>Enter A Patron</label>
+  <input name='patron'>
+  <button type='submit'>Add Patron</button>
+</form>
+
+<a href="/">Home Page</a>
